@@ -349,3 +349,40 @@ h2 { font-size: clamp(2rem, 5vw, 2.8rem); }
 @media (max-width: 52rem) { .d-planet { width: 96px; top: -1rem; right: 0; } .d-arrow { transform: rotate(-6deg); } }
 .two-col > .note { margin-left: 1.6rem; max-width: 14rem; }
 @media (max-width: 40rem) { .kid { width: 8.2rem; } .crew { gap: 0.4rem 0.8rem; justify-content: center; } .d-arrow { margin-bottom: -0.6rem; } }
+
+/* ---------- Plus brouillon : taches, ratures, gribouillis ---------- */
+:root {
+  --ring: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cpath d='M70 14 C 112 12 128 46 126 72 C 124 104 96 128 66 126 C 32 124 12 98 14 68 C 16 36 40 16 70 14' fill='none' stroke='%238a5a2b' stroke-opacity='0.28' stroke-width='7'/%3E%3Cpath d='M30 40 C 40 28 54 22 66 22' fill='none' stroke='%238a5a2b' stroke-opacity='0.22' stroke-width='3'/%3E%3C/svg%3E");
+  --splat: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='110'%3E%3Cg fill='%23233a7a' fill-opacity='0.82'%3E%3Cpath d='M52 30 C 66 18 84 30 80 46 C 96 50 92 72 76 70 C 74 86 54 88 50 74 C 34 80 26 62 38 54 C 26 44 38 26 52 30 Z'/%3E%3Ccircle cx='96' cy='26' r='5'/%3E%3Ccircle cx='18' cy='80' r='4'/%3E%3Ccircle cx='100' cy='88' r='3'/%3E%3Ccircle cx='28' cy='22' r='3'/%3E%3Ccircle cx='64' cy='100' r='2.5'/%3E%3C/g%3E%3C/svg%3E");
+  --scrib: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='60'%3E%3Cpath d='M6 40 C 20 10 30 50 44 22 S 70 48 84 18 S 110 50 124 20 S 146 44 154 26' fill='none' stroke='%23221d18' stroke-opacity='0.55' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M10 30 L150 34' stroke='%23221d18' stroke-opacity='0.45' stroke-width='2'/%3E%3C/svg%3E");
+  --smudge: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012' numOctaves='3' seed='5'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.25 0 0 0 0 0.2 0 0 0 0.16 -0.04'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23s)'/%3E%3C/svg%3E");
+}
+#association { background-image: var(--ring), var(--scrib), var(--smudge); background-position: 92% 96%, 4% 99%, 0 0; background-size: 150px, 140px, 300px; background-repeat: no-repeat, no-repeat, repeat; }
+#missions {
+  background-image:
+    var(--splat),
+    radial-gradient(circle at 1.3rem 50%, var(--night-sky) 0 0.5rem, transparent 0.55rem),
+    linear-gradient(90deg, transparent 3.4rem, #e98a8a 3.4rem 3.55rem, transparent 3.55rem),
+    linear-gradient(#b9cdf0 1px, transparent 1px);
+  background-size: 110px, 2.6rem 2.4rem, 100% 100%, 100% 1.6rem;
+  background-position: 97% 6%, 0 0, 0 0, 0 0;
+  background-repeat: no-repeat, repeat-y, no-repeat, repeat;
+}
+#projets { background-image: var(--ring), var(--smudge); background-position: 6% 92%, 0 0; background-size: 130px, 300px; background-repeat: no-repeat, repeat; }
+#artistes {
+  background-image: var(--splat), var(--ring), linear-gradient(#dfe6f3 1px, transparent 1px), linear-gradient(90deg, #dfe6f3 1px, transparent 1px);
+  background-size: 90px, 120px, 1.1rem 1.1rem, 1.1rem 1.1rem;
+  background-position: 3% 96%, 95% 8%, 0 0, 0 0;
+  background-repeat: no-repeat, no-repeat, repeat, repeat;
+}
+#lieux { background-image: var(--scrib), var(--smudge); background-position: 94% 6%, 0 0; background-size: 150px, 300px; background-repeat: no-repeat, repeat; }
+#contact { background-image: var(--splat), var(--ring), var(--smudge); background-position: 96% 92%, 70% 10%, 0 0; background-size: 120px, 160px, 300px; background-repeat: no-repeat, no-repeat, repeat; }
+
+/* les ratures */
+s { text-decoration: none; position: relative; color: var(--soft); }
+s::after { content: ""; position: absolute; left: -2px; right: -2px; top: 48%; height: 0.55em; transform: translateY(-50%) rotate(-3deg);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'%3E%3Cpath d='M2 12 L30 6 L18 14 L60 5 L44 15 L98 7' fill='none' stroke='%23e2452c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat; }
+
+/* tracés au crayon un peu tremblés autour des fiches et cartes */
+.missions li, #lieux .cities > div { outline: 2px solid rgba(34,29,24,0.55); outline-offset: 3px; }
+.missions li:nth-child(odd), #lieux .cities > div:nth-child(odd) { outline-offset: 5px; }
