@@ -257,7 +257,7 @@ h2::after { display: none; }
 .foot p { font-family: var(--hand); font-weight: 600; font-size: 1.15rem; transform: rotate(-0.6deg); }
 
 /* Bonshommes dessinés */
-.prose .crew { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin: 0.25rem 0 1.5rem; transform: none; }
+.crew { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin: 0.25rem 0 1.5rem; transform: none; }
 .kid { margin: 0; width: 9.5rem; text-align: center; }
 .kid svg { display: block; width: 100%; height: auto; overflow: visible; }
 .kid figcaption { font-family: var(--hand); font-weight: 600; font-size: 1.15rem; line-height: 1.1; color: var(--soft); }
