@@ -213,3 +213,45 @@ h2::after { display: none; }
 .missions li:nth-child(4)::before { background: #a9d3f0; transform: rotate(3deg); }
 .missions h3 { font-family: var(--marker); font-weight: 400; font-size: 1.4rem; }
 .roster h3, .cities h3 { font-family: var(--marker); font-weight: 400; font-size: 1.35rem; }
+
+/* ---------- Rien n'est droit ---------- */
+.note { margin: 0.6rem 0 0; font-family: var(--hand); font-weight: 700; font-size: 1.5rem; line-height: 1.1; color: var(--red); transform: rotate(-4deg); transform-origin: left; }
+.note.n2 { color: var(--blue); transform: rotate(3deg); }
+.note.n3 { color: var(--soft); transform: rotate(-2deg); margin: -0.4rem 0 0.8rem 1rem; }
+.two-col > .note { grid-column: 1; }
+@media (min-width: 52rem) { .two-col { grid-template-rows: auto 1fr; } .two-col > .prose, .two-col > .missions, .two-col > .contact { grid-column: 2; grid-row: 1 / span 2; } }
+
+.prose p:nth-child(odd) { transform: rotate(-0.5deg); }
+.prose p:nth-child(even) { transform: rotate(0.6deg) translateX(0.4rem); }
+.prose p:nth-child(3) { transform: rotate(-0.8deg) translateX(-0.3rem); }
+
+.hero-lede { font-family: var(--hand); font-weight: 600; font-size: 1.5rem; line-height: 1.25; transform: rotate(-2deg); }
+.hand { transform: rotate(-6deg) translateX(0.4em); }
+.cutline .cut:nth-child(2) { transform: rotate(8deg) translateY(0.1em); }
+.cutline .cut:nth-child(7) { transform: rotate(-9deg) translateY(-0.05em); }
+
+.section-intro { font-family: var(--hand); font-weight: 600; font-size: 1.45rem; line-height: 1.2; transform: rotate(-1deg); }
+
+.missions p { font-family: var(--hand); font-weight: 600; font-size: 1.3rem; line-height: 1.2; }
+.missions li:nth-child(1) { transform: rotate(-1.8deg); }
+.missions li:nth-child(2) { transform: rotate(2deg) translateY(0.4rem); }
+.missions li:nth-child(3) { transform: rotate(1.2deg) translateX(0.3rem); }
+.missions li:nth-child(4) { transform: rotate(-2.4deg) translateY(0.2rem); }
+
+.lineup li:nth-child(3n+3) { transform: rotate(-3deg) translateY(0.3rem); }
+.lineup li:nth-child(4n) { transform: rotate(3.5deg); }
+.lineup span { transform: rotate(-1.5deg); }
+
+.roster li, .cities li { font-family: var(--hand); font-weight: 600; font-size: 1.35rem; line-height: 1.15; border-bottom-style: dotted; }
+.roster li:nth-child(3n+1), .cities li:nth-child(3n+1) { transform: rotate(-1.2deg); }
+.roster li:nth-child(3n+2), .cities li:nth-child(3n+2) { transform: rotate(1deg) translateX(0.35rem); }
+.roster li:nth-child(3n), .cities li:nth-child(3n) { transform: rotate(-0.4deg) translateX(-0.2rem); }
+.roster h3:nth-of-type(odd), .cities div:nth-child(odd) h3 { transform: rotate(-3deg); }
+.roster h3:nth-of-type(even), .cities div:nth-child(even) h3 { transform: rotate(2.5deg); }
+
+.contact-mail { transform: rotate(-2deg); display: inline-block; }
+.bureau div:nth-child(1) { transform: rotate(-0.8deg); }
+.bureau div:nth-child(2) { transform: rotate(0.9deg); }
+.bureau dd small { font-family: var(--hand); font-size: 1.2rem; font-weight: 600; }
+.board-note { font-family: var(--hand); font-weight: 600; font-size: 1.35rem; line-height: 1.2; transform: rotate(1deg); }
+.foot p { font-family: var(--hand); font-weight: 600; font-size: 1.15rem; transform: rotate(-0.6deg); }
