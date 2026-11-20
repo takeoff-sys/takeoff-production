@@ -386,3 +386,28 @@ s::after { content: ""; position: absolute; left: -2px; right: -2px; top: 48%; h
 /* tracés au crayon un peu tremblés autour des fiches et cartes */
 .missions li, #lieux .cities > div { outline: 2px solid rgba(34,29,24,0.55); outline-offset: 3px; }
 .missions li:nth-child(odd), #lieux .cities > div:nth-child(odd) { outline-offset: 5px; }
+
+/* ---------- Encore plus brouillon ---------- */
+h2 s { color: inherit; opacity: 0.55; font-size: 0.7em; margin-right: 0.2em; }
+.board-block h2 s::after { filter: brightness(1.4); }
+ins.caret { position: relative; text-decoration: none; display: inline-block; width: 0.1em; color: var(--red); font-family: var(--hand); }
+ins.caret::before { content: "^"; position: absolute; left: -0.1em; bottom: -0.2em; font-size: 0.8em; color: var(--red); }
+ins.caret { font-size: 0.9em; transform: translateY(-0.7em); }
+.note.n4 { color: var(--blue); transform: rotate(-5deg); margin: 0 0 0.3rem; font-size: 1.6rem; }
+.note s::after { height: 0.5em; }
+/* gros pâtés gribouillés posés sur les feuilles */
+.d-blot { position: relative; height: 0; }
+.d-blot::before {
+  content: ""; position: absolute; width: 130px; height: 90px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 130 90'%3E%3Cpath d='M14 50 C 20 14 40 60 50 20 S 70 70 84 18 S 104 70 118 30 M10 62 C 30 40 46 76 64 44 S 96 80 120 50 M18 36 C 40 30 60 58 80 34 S 110 40 122 64 M24 70 C 44 56 70 84 104 66' fill='none' stroke='%23221d18' stroke-width='5' stroke-linecap='round' stroke-opacity='0.75'/%3E%3C/svg%3E") center / contain no-repeat;
+  z-index: 4;
+}
+.d-blot.b1::before { right: 9%; top: 0.6rem; transform: rotate(-12deg); }
+.d-blot.b2::before { left: 7%; top: -1.4rem; width: 90px; transform: rotate(18deg); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='110'%3E%3Cg fill='%23c0311a' fill-opacity='0.8'%3E%3Cpath d='M52 30 C 66 18 84 30 80 46 C 96 50 92 72 76 70 C 74 86 54 88 50 74 C 34 80 26 62 38 54 C 26 44 38 26 52 30 Z'/%3E%3Ccircle cx='96' cy='26' r='5'/%3E%3Ccircle cx='18' cy='80' r='4'/%3E%3Ccircle cx='100' cy='88' r='3'/%3E%3C/g%3E%3C/svg%3E"); }
+.d-blot.b3::before { right: 30%; top: 1.4rem; width: 110px; transform: rotate(4deg); }
+/* les paragraphes : l'encre bave un peu */
+.prose p, .missions p, .section-intro { text-shadow: 0.4px 0.3px 0 rgba(34,29,24,0.35); }
+/* un trait de surligneur raté */
+#association .prose p:last-child { background: linear-gradient(transparent 58%, rgba(246,196,47,0.55) 58% 90%, transparent 90%) no-repeat 0 0 / 70% 100%; }
+s { display: inline-block; text-indent: 0; }
+h2 s { opacity: 0.8; font-size: 0.85em; }
