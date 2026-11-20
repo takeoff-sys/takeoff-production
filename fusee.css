@@ -255,3 +255,13 @@ h2::after { display: none; }
 .bureau dd small { font-family: var(--hand); font-size: 1.2rem; font-weight: 600; }
 .board-note { font-family: var(--hand); font-weight: 600; font-size: 1.35rem; line-height: 1.2; transform: rotate(1deg); }
 .foot p { font-family: var(--hand); font-weight: 600; font-size: 1.15rem; transform: rotate(-0.6deg); }
+
+/* Bonshommes dessinés */
+.prose .crew { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin: 0.25rem 0 1.5rem; transform: none; }
+.kid { margin: 0; width: 9.5rem; text-align: center; }
+.kid svg { display: block; width: 100%; height: auto; overflow: visible; }
+.kid figcaption { font-family: var(--hand); font-weight: 600; font-size: 1.15rem; line-height: 1.1; color: var(--soft); }
+.kid figcaption b { display: block; font-weight: 700; font-size: 1.3rem; color: var(--ink); }
+.kid:nth-child(1) { transform: rotate(-3deg); }
+.kid:nth-child(2) { transform: rotate(2.5deg) translateY(0.4rem); }
+.kid:nth-child(3) { transform: rotate(-1.5deg); }
