@@ -278,3 +278,74 @@ body {
 .moon { stroke: var(--sheet); }
 .foot { color: #c9d4f5; }
 .two-col > .note { margin-left: 0.6rem; transform-origin: center; }
+
+/* ---------- Plus foufou ---------- */
+main { position: relative; }
+/* les lettres sautillent image par image */
+@media (prefers-reduced-motion: no-preference) {
+  .cut { animation: jig 0.9s steps(1) infinite; }
+  .cut:nth-child(2n) { animation-delay: -0.3s; }
+  .cut:nth-child(3n) { animation-delay: -0.6s; }
+  .d-ufo svg { animation: hover 2.6s steps(4) infinite alternate; }
+  .d-comet { animation: zoom 3s steps(6) infinite alternate; }
+}
+@keyframes jig { 0% { translate: 0 0; } 33% { translate: 0 -4px; } 66% { translate: 2px 1px; } }
+@keyframes hover { from { translate: 0 0; } to { translate: 0 -10px; } }
+@keyframes zoom { from { translate: 0 0; } to { translate: 24px -8px; } }
+
+/* des feuilles de toutes sortes, posées n'importe comment */
+main > .block { max-width: 62rem; }
+#association { transform: rotate(-1.4deg) translateX(-1.2rem); }
+#missions {
+  transform: rotate(1.6deg) translateX(1.5rem);
+  background-color: #fff;
+  background-image:
+    radial-gradient(circle at 1.3rem 50%, var(--night-sky) 0 0.5rem, transparent 0.55rem),
+    linear-gradient(90deg, transparent 3.4rem, #e98a8a 3.4rem 3.55rem, transparent 3.55rem),
+    linear-gradient(#b9cdf0 1px, transparent 1px);
+  background-size: 2.6rem 2.4rem, 100% 100%, 100% 1.6rem;
+  background-repeat: repeat-y, no-repeat, repeat;
+  padding-left: 2.5rem;
+}
+#projets { transform: rotate(-0.8deg) translateX(-0.6rem); background: #fff2a8; }
+#artistes {
+  transform: rotate(1deg) translateX(1rem);
+  background-color: #fff;
+  background-image: linear-gradient(#dfe6f3 1px, transparent 1px), linear-gradient(90deg, #dfe6f3 1px, transparent 1px);
+  background-size: 1.1rem 1.1rem;
+}
+#lieux { transform: rotate(-1.8deg) translateX(-1.4rem); background: #ffd6df; }
+#contact { transform: rotate(1.2deg) translateX(0.8rem); }
+@media (max-width: 40rem) { main > .block { transform: rotate(-0.8deg) !important; } #missions { transform: rotate(0.9deg) !important; } }
+
+h2 { font-size: clamp(2rem, 5vw, 2.8rem); }
+#missions h2 { transform: rotate(3deg); }
+#artistes h2 { transform: rotate(-4deg); }
+#lieux h2 { background: #a9d3f0; transform: rotate(2deg); }
+#contact h2 { background: var(--yellow); transform: rotate(-3deg); }
+
+/* les lieux : des cartes postales avec un timbre */
+#lieux .cities > div { position: relative; background: #fff; padding: 1rem 1.1rem 0.9rem; box-shadow: 3px 4px 0 rgba(0,0,0,0.15); }
+#lieux .cities > div:nth-child(1) { transform: rotate(-3deg); }
+#lieux .cities > div:nth-child(2) { transform: rotate(2.5deg) translateY(0.6rem); }
+#lieux .cities > div:nth-child(3) { transform: rotate(-1.5deg) translateY(-0.3rem); }
+#lieux .cities > div:nth-child(4) { transform: rotate(3.5deg) translateY(0.4rem); }
+#lieux .cities > div::after { content: ""; position: absolute; top: 0.6rem; right: 0.6rem; width: 2rem; height: 2.4rem; border: 2px dashed var(--red); background: radial-gradient(circle, var(--yellow) 0 0.45rem, transparent 0.5rem), #fbe3c4; transform: rotate(6deg); }
+#lieux .cities > div:nth-child(2)::after { border-color: var(--blue); background: radial-gradient(circle, var(--pink) 0 0.45rem, transparent 0.5rem), #dbe8fb; }
+#lieux .cities > div:nth-child(3)::after { border-color: var(--green); }
+#lieux .cities li { border-bottom-color: #e7e0d2; }
+
+/* gribouillis dans le ciel */
+.doodle { position: relative; z-index: 3; pointer-events: none; }
+.doodle svg { display: block; overflow: visible; }
+.doodle span { font-family: var(--hand); font-weight: 700; font-size: 1.5rem; line-height: 1; color: var(--yellow); }
+.d-arrow { display: flex; align-items: flex-end; gap: 0.3rem; width: max-content; margin: -0.5rem auto -2.2rem; transform: translateX(-6rem) rotate(-6deg); }
+.d-arrow svg { width: 70px; }
+.d-planet { position: absolute; right: 2%; top: 1.5rem; width: 150px; transform: rotate(14deg); }
+.d-comet { width: 220px; margin: -1.6rem 0 -2.4rem 8%; }
+.d-ufo { display: flex; align-items: center; gap: 0.6rem; width: max-content; margin: -1rem 6% -2.2rem auto; transform: rotate(5deg); }
+.d-ufo svg { width: 110px; }
+.d-ufo span { color: #c8f0d4; transform: rotate(-6deg); }
+@media (max-width: 52rem) { .d-planet { width: 96px; top: -1rem; right: 0; } .d-arrow { transform: rotate(-6deg); } }
+.two-col > .note { margin-left: 1.6rem; max-width: 14rem; }
+@media (max-width: 40rem) { .kid { width: 8.2rem; } .crew { gap: 0.4rem 0.8rem; justify-content: center; } .d-arrow { margin-bottom: -0.6rem; } }
