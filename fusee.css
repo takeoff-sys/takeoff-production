@@ -162,3 +162,54 @@ h2::after { content: ""; display: block; width: 3.2rem; height: 0.45rem; margin-
 .cities { display: grid; gap: 1.5rem 2rem; }
 @media (min-width: 60rem) { .cities { grid-template-columns: repeat(4, 1fr); } }
 @media (min-width: 40rem) and (max-width: 59.99rem) { .cities { grid-template-columns: repeat(2, 1fr); } }
+
+/* ---------- Scotch partout ---------- */
+:root { --marker: "Permanent Marker", "Caveat", cursive; --masking: #efe1b4; --gaffer: #1f1d1b; }
+/* bords déchirés */
+.tp, main > .block::before, main > .block::after, .hero-lede::before, h2, .lineup strong, .top nav a {
+  --torn: polygon(0 8%, 4% 0, 9% 10%, 14% 2%, 20% 9%, 26% 0, 100% 0, 97% 12%, 100% 25%, 96% 40%, 100% 55%, 97% 70%, 100% 86%, 96% 100%, 88% 92%, 82% 100%, 75% 91%, 68% 100%, 0 100%, 3% 85%, 0 70%, 4% 55%, 0 40%, 3% 25%);
+}
+.tp { position: absolute; z-index: 2; width: 120px; height: 30px; background: var(--masking); opacity: 0.92; clip-path: var(--torn); box-shadow: 0 1px 0 rgba(0,0,0,0.08); }
+.tp.gaff { background: var(--gaffer); opacity: 0.95; }
+.rocket-scene { position: relative; }
+.tp-a { top: 12%; left: -4%; transform: rotate(-24deg); }
+.tp-b { bottom: 8%; right: -2%; width: 140px; transform: rotate(16deg); }
+main > .block::before, main > .block::after, .hero-lede::before { clip-path: var(--torn); background: var(--masking); }
+main > .block:nth-of-type(3n)::after { background: var(--gaffer); }
+main > .block:nth-of-type(3n+2)::before { background: #f3a6a0; }
+
+/* titres : écrits au feutre sur une bande de scotch */
+h2 {
+  display: inline-block; font-family: var(--marker); font-weight: 400; letter-spacing: 0.01em;
+  font-size: clamp(1.7rem, 4.2vw, 2.3rem); line-height: 1.1;
+  background: var(--masking); padding: 0.35rem 1.4rem 0.3rem 1.1rem;
+  clip-path: var(--torn); transform: rotate(-2deg);
+}
+h2::after { display: none; }
+.board-block h2 { background: var(--gaffer); color: #fff; transform: rotate(1.5deg); }
+.two-col > h2 { justify-self: start; }
+
+/* menu : petites étiquettes de scotch */
+.top nav a { background: var(--masking); color: var(--ink); font-family: var(--marker); font-size: 1rem; padding: 0.15rem 0.7rem; clip-path: var(--torn); }
+.top nav a:nth-child(2n) { transform: rotate(-2deg); }
+.top nav a:nth-child(2n+1) { transform: rotate(1.5deg); }
+.top nav a:hover { background: var(--yellow); color: var(--ink); }
+
+/* line-up : noms au feutre sur scotch, comme les étiquettes d'une console */
+.lineup strong {
+  font-family: var(--marker); font-weight: 400; text-transform: none; letter-spacing: 0.01em; font-size: 1.25rem;
+  color: var(--ink); background: var(--masking); border-radius: 0; text-shadow: none; box-shadow: none;
+  padding: 0.3rem 1rem 0.25rem; clip-path: var(--torn);
+}
+.lineup li:nth-child(4n+2) strong { background: var(--gaffer); color: #fff; }
+.lineup li:nth-child(4n+3) strong { background: #f3a6a0; }
+.lineup li:nth-child(5n) strong { background: #a9d3f0; color: var(--ink); }
+
+/* missions : fiches tenues par un bout de scotch */
+.missions li { position: relative; border-top: 0; }
+.missions li::before { content: ""; position: absolute; top: -11px; left: 50%; width: 76px; height: 22px; margin-left: -38px; background: var(--masking); clip-path: var(--torn); transform: rotate(-4deg); }
+.missions li:nth-child(2)::before { background: var(--gaffer); transform: rotate(5deg); }
+.missions li:nth-child(3)::before { background: #f3a6a0; }
+.missions li:nth-child(4)::before { background: #a9d3f0; transform: rotate(3deg); }
+.missions h3 { font-family: var(--marker); font-weight: 400; font-size: 1.4rem; }
+.roster h3, .cities h3 { font-family: var(--marker); font-weight: 400; font-size: 1.35rem; }
